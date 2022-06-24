@@ -26,6 +26,7 @@ export const App = () => {
           <ErrorBoundary>
             <CharList onCharSelected={onCharSelected} />
           </ErrorBoundary>
+
           <ErrorBoundary>
             <CharInfo charId={selectedChar} />
           </ErrorBoundary>
