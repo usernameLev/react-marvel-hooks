@@ -7,7 +7,7 @@ import { ErrorBoundary } from '../errorBoundary/ErrorBoundary';
 
 import decoration from '../../resources/img/vision.png';
 
-export const MainPage = () => {
+const MainPage = () => {
   const [selectedChar, setChar] = useState(null);
 
   const onCharSelected = (id) => {
@@ -34,3 +34,5 @@ export const MainPage = () => {
     </>
   );
 };
+
+export default MainPage;
