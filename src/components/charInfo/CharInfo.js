@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react';
 
 import { useMarvelService } from '../../services/MarvelService';
 import { ErrorMessage } from '../errorMessage/ErrorMessage';
-import { Skeleton } from '../skeleton/Skeleton';
 import { Spinner } from '../spinner/Spinner';
+import { Skeleton } from '../skeleton/Skeleton';
 
 import './charInfo.scss';
 
