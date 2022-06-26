@@ -2,6 +2,9 @@ import { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import { AppHeader } from '../appHeader/AppHeader';
+import { SingleCharacterLayout } from '../pages/singleCharacterLayout/SingleCharacterLayout';
+import { SingleComicLayout } from '../pages/singleComicLayout/SingleComicLayout';
+import { SinglePage } from '../pages/SinglePage';
 import { Spinner } from '../spinner/Spinner';
 
 const Page404 = lazy(() => import('../pages/404'));
@@ -17,16 +20,23 @@ export const App = () => {
         <main>
           <Suspense fallback={<Spinner />}>
             <Switch>
-              <Route path='/' exact>
+              <Route exact path='/'>
                 <MainPage />
               </Route>
 
-              <Route path='/comics' exact>
+              <Route exact path='/comics'>
                 <ComicsPage />
               </Route>
 
-              <Route path='/comics/:comicId' exact>
-                <SingleComicPage />
+              <Route exact path='/comics/:id'>
+                <SinglePage Component={SingleComicLayout} dataType='comic' />
+              </Route>
+
+              <Route exact path='/characters/:id'>
+                <SinglePage
+                  Component={SingleCharacterLayout}
+                  dataType='character'
+                />
               </Route>
 
               <Route path='*'>
